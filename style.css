@@ -245,24 +245,35 @@ body {
         font-size: 0.9em; /* Reducir el tamaño de la fuente en el menú */
         padding: 8px 10px;
     }
-}
-.beneficios .box-container {
-    display: flex;
-    flex-wrap: wrap; /* Permitir que las cajas se ajusten en varias filas */
-    justify-content: space-between; /* Espacio entre las cajas */
-}
-
-.beneficios .box {
-    flex: 0 0 30%; /* Cada caja ocupará aproximadamente el 30% del ancho */
-    margin: 10px; /* Espacio entre las cajas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Para pantallas más pequeñas, asegurarte de que se mantengan en 3 columnas */
-@media screen and (max-width: 768px) {
-    .beneficios .box {
-        flex: 0 0 30%; /* Mantener 3 columnas */
-        min-width: 200px; /* Mantener un ancho mínimo para las cajas */
+    .beneficios .box-container {
+        display: flex;              /* Establece flexbox para las cajas de beneficios */
+        justify-content: center;    /* Centra el contenido */
+        flex-wrap: wrap;           /* Permite que las cajas se ajusten en una fila */
+        gap: 20px;                 /* Espacio entre las cajas */
+        margin: 20px 0;           /* Margen superior e inferior */
     }
-}
-
+    
+    .beneficios .box {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+        width: 30%;                /* Ancho en dispositivos más grandes */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Media query para móviles */
+    @media (max-width: 768px) {
+        .beneficios .box {
+            width: 30%;            /* Mantiene tres columnas en dispositivos móviles */
+        }
+    
+        .head {
+            padding: 10px 10px;   /* Reduce el padding para el encabezado en móviles */
+        }
+    
+        .header {
+            height: auto;         /* Ajusta la altura para que el contenido sea visible */
+            margin-top: 0;       /* Elimina el margen superior */
+        }
+    }
+    
