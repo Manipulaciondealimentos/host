@@ -16,7 +16,7 @@ body {
     background-color: #333;
     color: white;
     display: flex;
-    justify-content: space-between; /* Espacio entre logo y menú */
+    justify-content: center; /* Centrar los elementos de la barra de navegación */
     align-items: center;
     padding: 10px 30px;
     position: fixed;
@@ -26,11 +26,13 @@ body {
 }
 
 .head .logo {
-    margin-left: 30px; /* Espaciado a la izquierda del logo */
+    margin-right: auto; /* Alinear el logo a la izquierda */
+    margin-left: 30px;
 }
 
 .head .navbar {
     display: flex;
+    justify-content: center; 
 }
 
 .navbar a {
@@ -48,7 +50,7 @@ body {
 
 .header {
     background: url('img/lg-_1_.jpg') no-repeat center center/cover;
-    height: 600px;
+    height: auto; /* Cambia a auto para que ajuste al contenido */
     color: rgb(255, 255, 255);
     text-align: center;
     display: flex;
@@ -56,7 +58,8 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bold;  
-    margin-top: 60px; /* Espacio por el encabezado fijo */
+    margin-top: 60px;
+    padding: 20px; /* Añade padding para el contenido */
 }
 
 .header h2 {
@@ -64,6 +67,7 @@ body {
     margin-bottom: 20px;
     color: #ffffff;
     font-weight: bold;
+    word-wrap: break-word; /* Permitir el salto de línea si es necesario */
 }
 
 .header p {
@@ -97,106 +101,13 @@ body {
     color: #333;
 }
 
-.sau .box-container {
+.beneficios .box-container {
     display: flex;
-    justify-content: center; /* Centra las cajas de productos */
-    flex-wrap: wrap;
+    justify-content: space-between; /* Espacio igual entre columnas */
+    flex-wrap: wrap; /* Permitir que las cajas se ajusten */
 }
 
-.sau .box {
-    background-color: white;
-    padding: 20px;
-    width: 30%;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.sau .box:hover {
-    transform: translateY(-10px);
-}
-
-.sau .box i {
-    font-size: 3em;
-    color: #ff6347;
-    margin-bottom: 10px;
-}
-
-.sau .box h3 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
-}
-
-.about, .price, .contact {
-    background-color: white;
-    margin: 20px auto;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 1200px; /* Asegura que el contenido no sea muy amplio */
-}
-
-.about .btn, .price .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.about .btn:hover, .price .btn:hover {
-    background-color: #555;
-}
-
-.contact figure {
-    margin-top: 20px;
-}
-
-.map img {
-    border-radius: 10px;
-    max-width: 100%;
-}
-
-.mission-vision, .legal-framework {
-    padding: 50px 20px;
-    background-color: #f9f9f9;
-}
-
-.mission-vision .box-container, .legal-framework .box-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-}
-
-.mission-vision .box, .legal-framework .box {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 45%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.legal-framework {
-    background-color: #fff;
-    text-align: left;
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.box-container {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.box {
+.beneficios .box {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 5px;
@@ -204,19 +115,17 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.beneficios .box p {
-    text-align: left; /* Alinea el texto a la izquierda */
-}
-
 /* Estilos para pantallas más pequeñas (móviles) */
 @media only screen and (max-width: 768px) {
     .header {
-        height: auto;         /* Ajusta la altura para que el contenido sea visible */
-        margin-top: 0;       /* Elimina el margen superior */
+        height: auto; /* Ajusta la altura para que el contenido sea visible */
+        margin-top: 0; /* Elimina el margen superior */
+        padding: 20px; /* Añade padding para el contenido */
     }
 
     .header h2 {
-        font-size: 28px;
+        font-size: 28px; /* Ajusta el tamaño del texto para móviles */
+        padding: 0 10px; /* Añade padding a los lados */
     }
 
     .header p {
@@ -224,39 +133,15 @@ body {
         font-size: 16px;
     }
 
-    .sau .box {
-        width: 100%;
-        margin: 10px 0; /* Hacer que cada caja ocupe el ancho completo en móviles */
-    }
-
-    .mission-vision .box, .legal-framework .box {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .box-container {
-        flex-direction: column; /* Cambiar disposición de las cajas a columna en móviles */
-        gap: 10px;
-    }
-
-    .head .navbar a {
-        font-size: 0.9em; /* Reducir el tamaño de la fuente en el menú */
-        padding: 8px 10px;
-    }
-    
     .beneficios .box-container {
         display: flex;              /* Establece flexbox para las cajas de beneficios */
-        justify-content: center;    /* Centra el contenido */
+        justify-content: space-between; /* Espacio entre las cajas */
         flex-wrap: wrap;           /* Permite que las cajas se ajusten en una fila */
-        gap: 20px;                 /* Espacio entre las cajas */
+        gap: 10px;                 /* Espacio entre las cajas */
         margin: 20px 0;           /* Margen superior e inferior */
     }
     
     .beneficios .box {
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 5px;
         width: 30%;                /* Ancho en dispositivos más grandes */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 }
