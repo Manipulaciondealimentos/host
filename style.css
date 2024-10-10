@@ -16,7 +16,7 @@ body {
     background-color: #333;
     color: white;
     display: flex;
-    justify-content: center; /* Centrar los elementos de la barra de navegación */
+    justify-content: space-between; /* Espacio entre logo y menú */
     align-items: center;
     padding: 10px 30px;
     position: fixed;
@@ -26,13 +26,11 @@ body {
 }
 
 .head .logo {
-    margin-right: auto; /* Alinear el logo a la izquierda */
-    margin-left: 30px;
+    margin-left: 30px; /* Espaciado a la izquierda del logo */
 }
 
 .head .navbar {
     display: flex;
-    justify-content: center; 
 }
 
 .navbar a {
@@ -58,7 +56,7 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bold;  
-    margin-top: 60px;
+    margin-top: 60px; /* Espacio por el encabezado fijo */
 }
 
 .header h2 {
@@ -67,7 +65,6 @@ body {
     color: #ffffff;
     font-weight: bold;
 }
-
 
 .header p {
     max-width: 600px;
@@ -214,7 +211,8 @@ body {
 /* Estilos para pantallas más pequeñas (móviles) */
 @media only screen and (max-width: 768px) {
     .header {
-        height: 400px;
+        height: auto;         /* Ajusta la altura para que el contenido sea visible */
+        margin-top: 0;       /* Elimina el margen superior */
     }
 
     .header h2 {
@@ -245,6 +243,7 @@ body {
         font-size: 0.9em; /* Reducir el tamaño de la fuente en el menú */
         padding: 8px 10px;
     }
+    
     .beneficios .box-container {
         display: flex;              /* Establece flexbox para las cajas de beneficios */
         justify-content: center;    /* Centra el contenido */
@@ -261,19 +260,3 @@ body {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 }
-    /* Media query para móviles */
-    @media (max-width: 768px) {
-        .beneficios .box {
-            width: 30%;            /* Mantiene tres columnas en dispositivos móviles */
-        }
-    
-        .head {
-            padding: 10px 10px;   /* Reduce el padding para el encabezado en móviles */
-        }
-    
-        .header {
-            height: auto;         /* Ajusta la altura para que el contenido sea visible */
-            margin-top: 0;       /* Elimina el margen superior */
-        }
-    }
-    
