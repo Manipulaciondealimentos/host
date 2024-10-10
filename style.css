@@ -1,28 +1,278 @@
-/* Mantener las 3 columnas en pantallas más pequeñas */
-.beneficios .box-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Permite que los elementos se reorganicen si es necesario */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-.beneficios .box {
-    width: 30%; /* Ajuste del ancho de las cajas */
-    background-color: #f9f9f9;
-    padding: 20px;
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center; /* Centrar el texto por defecto */
+}
+
+.head {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center; /* Centrar los elementos de la barra de navegación */
+    align-items: center;
+    padding: 10px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.head .logo {
+    margin-right: auto; /* Alinear el logo a la izquierda */
+    margin-left: 30px;
+}
+
+.head .navbar {
+    display: flex;
+    justify-content: center; 
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #555;
     border-radius: 5px;
+}
+
+.header {
+    background: url('img/lg-_1_.jpg') no-repeat center center/cover;
+    height: 600px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;  
+    margin-top: 60px;
+}
+
+.header h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+.header p {
+    max-width: 600px;
+    margin-bottom: 40px;
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.btn-home a {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ff6347;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-home a:hover {
+    background-color: #ff4500;
+}
+
+.content {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sau .box-container {
+    display: flex;
+    justify-content: center; /* Centra las cajas de productos */
+    flex-wrap: wrap;
+}
+
+.sau .box {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.sau .box:hover {
+    transform: translateY(-10px);
+}
+
+.sau .box i {
+    font-size: 3em;
+    color: #ff6347;
+    margin-bottom: 10px;
+}
+
+.sau .box h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.about, .price, .contact {
+    background-color: white;
+    margin: 20px auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Asegura que el contenido no sea muy amplio */
+}
+
+.about .btn, .price .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.about .btn:hover, .price .btn:hover {
+    background-color: #555;
+}
+
+.contact figure {
+    margin-top: 20px;
+}
+
+.map img {
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.mission-vision, .legal-framework {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.mission-vision .box-container, .legal-framework .box-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.mission-vision .box, .legal-framework .box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Ajustes para móviles */
+.legal-framework {
+    background-color: #fff;
+    text-align: left;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%; /* Ajusta el ancho de las cajas si es necesario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.beneficios .box p {
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Estilos para pantallas más pequeñas (móviles) */
 @media only screen and (max-width: 768px) {
-    .beneficios .box {
-        width: 30%; /* Mantener tres columnas con un ancho menor */
+    .header {
+        height: 400px;
+    }
+
+    .header h2 {
+        font-size: 28px;
+    }
+
+    .header p {
+        max-width: 90%;
+        font-size: 16px;
+    }
+
+    .sau .box {
+        width: 100%;
+        margin: 10px 0; /* Hacer que cada caja ocupe el ancho completo en móviles */
+    }
+
+    .mission-vision .box, .legal-framework .box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .box-container {
+        flex-direction: column; /* Cambiar disposición de las cajas a columna en móviles */
+        gap: 10px;
+    }
+
+    .head .navbar a {
+        font-size: 0.9em; /* Reducir el tamaño de la fuente en el menú */
+        padding: 8px 10px;
     }
 }
 
-/* Ajustes para pantallas aún más pequeñas */
+/* Estilo base para .beneficios */
+.beneficios .box-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Asegura que las cajas se ajusten si es necesario */
+}
+
+.beneficios .box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%; /* Tres columnas por defecto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Añadir margen para que no se peguen entre sí */
+}
+
+/* Para pantallas medianas (tablets) */
+@media only screen and (max-width: 768px) {
+    .beneficios .box {
+        width: 45%; /* Dos columnas en pantallas medianas */
+    }
+}
+
+/* Para pantallas pequeñas (móviles) */
 @media only screen and (max-width: 576px) {
     .beneficios .box {
-        width: 100%; /* Colocar en una columna cuando el espacio sea extremadamente limitado */
+        width: 100%; /* Una columna en pantallas pequeñas */
     }
 }
