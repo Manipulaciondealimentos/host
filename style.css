@@ -246,33 +246,21 @@ body {
         padding: 8px 10px;
     }
 }
-
-/* Estilo base para .beneficios */
 .beneficios .box-container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Asegura que las cajas se ajusten si es necesario */
+    flex-wrap: wrap;
+    justify-content: space-between; /* Asegura que haya espacio entre las cajas */
 }
 
 .beneficios .box {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    width: 30%; /* Tres columnas por defecto */
+    flex: 1 1 30%; /* Esto permite que cada caja ocupe el 30% del contenedor */
+    margin: 10px;
+    min-width: 200px; /* Ajusta este valor para mantener las cajas alineadas en pantallas pequeñas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px; /* Añadir margen para que no se peguen entre sí */
 }
 
-/* Para pantallas medianas (tablets) */
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .beneficios .box {
-        width: 45%; /* Dos columnas en pantallas medianas */
-    }
-}
-
-/* Para pantallas pequeñas (móviles) */
-@media only screen and (max-width: 576px) {
-    .beneficios .box {
-        width: 100%; /* Una columna en pantallas pequeñas */
+        flex: 1 1 30%; /* Mantiene el 30% de ancho en pantallas móviles */
     }
 }
