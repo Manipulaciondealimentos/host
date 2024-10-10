@@ -248,19 +248,21 @@ body {
 }
 .beneficios .box-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Asegura que haya espacio entre las cajas */
+    flex-wrap: wrap; /* Permitir que las cajas se ajusten en varias filas */
+    justify-content: space-between; /* Espacio entre las cajas */
 }
 
 .beneficios .box {
-    flex: 1 1 30%; /* Esto permite que cada caja ocupe el 30% del contenedor */
-    margin: 10px;
-    min-width: 200px; /* Ajusta este valor para mantener las cajas alineadas en pantallas pequeñas */
+    flex: 0 0 30%; /* Cada caja ocupará aproximadamente el 30% del ancho */
+    margin: 10px; /* Espacio entre las cajas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Para pantallas más pequeñas, asegurarte de que se mantengan en 3 columnas */
 @media screen and (max-width: 768px) {
     .beneficios .box {
-        flex: 1 1 30%; /* Mantiene el 30% de ancho en pantallas móviles */
+        flex: 0 0 30%; /* Mantener 3 columnas */
+        min-width: 200px; /* Mantener un ancho mínimo para las cajas */
     }
 }
+
